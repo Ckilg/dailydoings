@@ -1,0 +1,25 @@
+---
+layout: layout/main.njk
+
+pagination:
+    data: contentful
+    size: 1
+    alias: daily
+---
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="daily">
+                <img src="{{ daily.fields.image.fields.file.url }}" class="daily-img-top" alt="{{ daily.fields.imageAlt }}">
+                <div class="card-body">
+                    <h1 class="daily-title">{{ daily.fields.title }}</h1>
+                    <h2 class="daily-date">{{ daily.fields.date }}</h2>
+                    <p class="daily-text">
+                        {{ daily.fields.description.content[0].content[0].value }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
